@@ -1,0 +1,113 @@
+@use "./variables";
+
+.grid-container_top {
+  height: 95px;
+  width: 540px;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  color: white;
+
+  @media screen and (max-width: 768px) {
+    width: 327px;
+  }
+
+  &[data-theme="2"] {
+    color: black;
+  }
+  &[data-theme="3"] {
+    color: variables.$text-color3;
+  }
+
+  .calc-p {
+    padding-left: 8px;
+    transform: translate(0px, -10px);
+    font-size: 30px;
+    font-weight: 700;
+
+    @media screen and (max-width: 768px) {
+      font-size: 30px;
+      transform: translate(-1px, -14px);
+    }
+  }
+  .theme-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+    .theme-p {
+      font-size: 13px;
+      font-weight: 700;
+      transform: translate(0px, -2px);
+
+      @media screen and (max-width: 768px) {
+        font-size: 13px;
+        transform: translate(2px, 3px);
+      }
+    }
+
+    .theme-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-items: end;
+
+      .theme {
+        display: flex;
+        font-size: 12px;
+        gap: 15px;
+        list-style: none;
+        transform: translate(-11px, -10px);
+
+        @media screen and (max-width: 768px) {
+          transform: translate(-11px, -8px);
+          font-size: 13px;
+        }
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: start;
+        background: variables.$bg-keypad-toggle;
+        align-items: center;
+        cursor: pointer;
+
+        &[data-theme="2"] {
+          justify-content: center;
+          background: variables.$bg-keypad-toggle2;
+        }
+
+        &[data-theme="3"] {
+          justify-content: end;
+          background: variables.$bg-keypad-toggle-screen3;
+        }
+        margin-bottom: 5px;
+        width: 71px;
+        height: 26px;
+        border-radius: 10px;
+        transform: translate(1px, -5px);
+        padding: 0 3px;
+
+        @media screen and (max-width: 768px) {
+          width: 71px;
+        }
+
+        &[data-theme="2"] button {
+          background: variables.$key-orange;
+        }
+        &[data-theme="3"] button {
+          background: variables.$key-toggle-cyan;
+        }
+
+        button {
+          width: 15px;
+          height: 15px;
+          border: none;
+          border-radius: 100%;
+          background: variables.$key-red;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

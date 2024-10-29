@@ -1,0 +1,175 @@
+@use "./variables";
+.grid-container_bottom {
+  background: variables.$bg-keypad-toggle;
+  height: 479px;
+  border-radius: 10px;
+  padding: 32px;
+  width: 540px;
+  justify-items: center;
+
+  @media screen and (max-width: 768px) {
+    width: 327px;
+    height: 420px;
+    padding: 24px;
+  }
+
+  &[data-theme="2"] {
+    background: variables.$bg-keypad-toggle2;
+  }
+
+  &[data-theme="3"] {
+    background: variables.$bg-keypad-toggle-screen3;
+  }
+
+  .grid-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    height: 416px;
+
+    @media screen and (max-width: 768px) {
+      gap: 13px;
+      //center grid buttons
+      justify-items: center;
+
+      height: 372px;
+    }
+
+    .calc-button {
+      padding-top: 8px;
+      width: 101px;
+      height: 64px;
+      background: variables.$key-background;
+      box-shadow: variables.$key-shadow 0px 4px 1px 0px;
+      border-radius: 10px;
+      border: none;
+      font-size: 35px;
+      font-weight: 700;
+      color: variables.$grayish-blue;
+      cursor: pointer;
+
+      &:hover {
+        background: white;
+      }
+
+      @media screen and (max-width: 768px) {
+        width: 60px;
+        height: 60px;
+        font-size: 32px;
+      }
+
+      &[data-theme="3"] {
+        background: variables.$key-violet;
+        box-shadow: variables.$key-shadow-violet 0px 4px 1px 0px;
+        color: variables.$text-color3;
+
+        &:hover {
+          background: variables.$key-violet-light;
+        }
+      }
+
+      &:nth-child(4) {
+        background: variables.$key-blue;
+        box-shadow: variables.$key-shadow-blue 0px 4px 1px 0px;
+        color: white;
+        font-size: 28px;
+        padding-bottom: 4px;
+        padding-left: 4px;
+
+        &:hover {
+          background: variables.$key-light-blue;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 20px;
+
+          padding-bottom: 7px;
+        }
+
+        &[data-theme="2"] {
+          background: variables.$moderate-cyan;
+
+          &:hover {
+            background: variables.$key-light-cyan;
+          }
+        }
+        &[data-theme="3"] {
+          background: variables.$key-background3;
+          box-shadow: variables.$key-shadow3 0px 4px 1px 0px;
+
+          &:hover {
+            background: variables.$key-light-violet3;
+          }
+        }
+      }
+
+      &:nth-child(17) {
+        width: 100%;
+        background: variables.$key-blue;
+        box-shadow: variables.$key-shadow-blue 0px 4px 1px 0px;
+        grid-column: span 2;
+        color: white;
+
+        font-size: 28px;
+
+        &:hover {
+          background: variables.$key-light-blue;
+        }
+
+        @media screen and (max-width: 768px) {
+          font-size: 20px;
+          padding-right: 9px;
+        }
+
+        &[data-theme="2"] {
+          background: variables.$moderate-cyan;
+
+          &:hover {
+            background: variables.$key-light-cyan;
+          }
+        }
+        &[data-theme="3"] {
+          background: variables.$key-background3;
+          box-shadow: variables.$key-shadow3 0px 4px 1px 0px;
+
+          &:hover {
+            background: variables.$key-light-violet3;
+          }
+        }
+      }
+
+      &:last-child {
+        width: 100%;
+        font-size: 25px;
+        grid-column: span 2;
+        background: variables.$key-red;
+        color: white;
+
+        box-shadow: variables.$key-shadow-red 0px 4px 1px 0px;
+
+        &:hover {
+          background: variables.$key-light-red;
+        }
+
+        &[data-theme="2"] {
+          background: variables.$key-orange;
+          box-shadow: variables.$key-shadow-orange 0px 4px 0px 0px;
+
+          &:hover {
+            background: variables.$key-light-orange;
+          }
+        }
+
+        &[data-theme="3"] {
+          background: variables.$key-toggle-cyan;
+          box-shadow: variables.$key-shadow-cyan 0px 4px 1px 0px;
+          color: black;
+
+          &:hover {
+            background: variables.$key-light-cyan3;
+          }
+        }
+      }
+    }
+  }
+}

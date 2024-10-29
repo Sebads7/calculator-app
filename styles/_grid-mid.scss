@@ -1,0 +1,43 @@
+@use "./variables";
+
+.grid-container_mid {
+  background: variables.$bg-screen;
+  height: 128px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 540px;
+
+  @media screen and (max-width: 768px) {
+    height: 88px;
+    width: 327px;
+  }
+
+  &[data-theme="2"] {
+    background: variables.$bg-screen-2;
+  }
+
+  &[data-theme="3"] {
+    background: variables.$bg-keypad-toggle-screen3;
+  }
+
+  p {
+    font-weight: 700;
+    color: white;
+    font-size: 55px;
+    padding-right: 30px;
+    @media screen and (max-width: 768px) {
+      padding-right: 22px;
+      font-size: 39px;
+    }
+
+    &[data-theme="2"] {
+      color: black;
+    }
+
+    &[data-theme="3"] {
+      color: variables.$text-color3;
+    }
+  }
+}
