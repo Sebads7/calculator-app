@@ -2,75 +2,75 @@
   "calculator": [
     {
       "button": "7",
-      "id": "1"
-    },
-    {
-      "button": "8",
-      "id": "2"
-    },
-    {
-      "button": "9",
-      "id": "3"
-    },
-    {
-      "button": "DEL",
-      "id": "4"
-    },
-    {
-      "button": "4",
-      "id": "5"
-    },
-    {
-      "button": "5",
-      "id": "6"
-    },
-    {
-      "button": "6",
       "id": "7"
     },
     {
-      "button": "+",
+      "button": "8",
       "id": "8"
     },
     {
-      "button": "1",
+      "button": "9",
       "id": "9"
     },
     {
+      "button": "DEL",
+      "id": "DEL"
+    },
+    {
+      "button": "4",
+      "id": "4"
+    },
+    {
+      "button": "5",
+      "id": "5"
+    },
+    {
+      "button": "6",
+      "id": "6"
+    },
+    {
+      "button": " + ",
+      "id": " + "
+    },
+    {
+      "button": "1",
+      "id": "1"
+    },
+    {
       "button": "2",
-      "id": "10"
+      "id": "2"
     },
     {
       "button": "3",
-      "id": "11"
+      "id": "3"
     },
     {
       "button": "-",
-      "id": "12"
+      "id": "-"
     },
     {
       "button": ".",
-      "id": "13"
+      "id": "."
     },
     {
       "button": "0",
-      "id": "14"
+      "id": "0"
     },
     {
       "button": "/",
-      "id": "15"
+      "id": "/"
     },
     {
       "button": "x",
-      "id": "16"
+      "id": "x"
     },
     {
       "button": "RESET",
-      "id": "17"
+      "id": "RES"
     },
     {
       "button": "=",
-      "id": "18"
+      "id": "="
     }
   ]
 }
