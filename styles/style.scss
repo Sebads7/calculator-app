@@ -1,0 +1,329 @@
+// Theme 1
+
+// - Backgrounds
+
+$main-background: hsl(222, 26%, 31%);
+$bg-keypad-toggle: hsl(223, 31%, 20%);
+$bg-screen: hsl(224, 36%, 15%);
+
+// - Keys
+$key-red: hsl(6, 63%, 50%);
+$key-shadow-red: hsl(6, 70%, 34%);
+
+$key-blue: hsl(225, 21%, 49%);
+$key-shadow-blue: hsl(224, 28%, 35%);
+
+$key-background: hsl(30, 25%, 89%);
+$key-shadow: hsl(28, 16%, 65%);
+
+// - Text
+$text-color: hsl(0, 0%, 100%);
+$grayish-blue: hsl(221, 14%, 31%);
+
+//Theme 2
+
+// - Backgrounds
+$main-background2: hsl(0, 0%, 90%);
+$bg-keypad-toggle2: hsl(0, 5%, 81%);
+$bg-screen-2: hsl(0, 0%, 93%);
+
+// Keys
+
+$key-orange: hsl(25, 98%, 40%);
+$key-shadow-orange: hsl(25, 99%, 27%);
+
+$moderate-cyan: hsl(185, 42%, 37%);
+$very-dark-cyan: hsl(185, 58%, 25%);
+
+// - Text
+
+// Theme 3
+
+// - Backgrounds
+
+$main-background3: hsl(268, 75%, 9%);
+$bg-keypad-toggle-screen3: hsl(268, 71%, 12%);
+
+// - Keys
+
+$key-background3: hsl(281, 89%, 26%);
+$key-shadow3: hsl(285, 91%, 52%);
+
+$key-toggle-cyan: hsl(176, 100%, 44%);
+$key-shadow-cyan: hsl(177, 92%, 70%);
+
+$key-violet: hsl(268, 47%, 21%);
+$key-shadow-violet: hsl(290, 70%, 36%);
+
+// - Text
+
+$text-color3: hsl(52, 100%, 62%);
+$text-color-blue3: hsl(198, 20%, 13%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "League Spartan", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: $main-background;
+
+  &[data-theme="2"] {
+    background: $main-background2;
+  }
+
+  &[data-theme="3"] {
+    background: $main-background3;
+  }
+}
+
+.calculator {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  width: 486px;
+  gap: 22px;
+  grid-template-rows: repeat(1, 1fr);
+
+  .grid-container_top {
+    height: 20px;
+    height: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    color: white;
+
+    &[data-theme="2"] {
+      color: black;
+    }
+    &[data-theme="3"] {
+      color: $text-color3;
+    }
+
+    .calc-p {
+      padding-left: 8px;
+      transform: translate(-1px, -7px);
+      font-size: 27px;
+      font-weight: 700;
+    }
+    .theme-row {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+
+      .theme-p {
+        font-size: 12px;
+        font-weight: 700;
+        transform: translate(2px, 1px);
+      }
+
+      .theme-column {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        align-items: end;
+
+        .theme {
+          display: flex;
+          font-size: 12px;
+          gap: 15px;
+          list-style: none;
+          transform: translate(-9px, -5px);
+        }
+
+        .button-container {
+          display: flex;
+          justify-content: start;
+          background: $bg-keypad-toggle;
+          align-items: center;
+          cursor: pointer;
+
+          &[data-theme="2"] {
+            justify-content: center;
+            background: $bg-keypad-toggle2;
+          }
+
+          &[data-theme="3"] {
+            justify-content: end;
+            background: $bg-keypad-toggle-screen3;
+          }
+
+          margin-bottom: 5px;
+          width: 63px;
+          height: 23px;
+          border-radius: 10px;
+
+          padding: 0 3px;
+
+          &[data-theme="2"] button {
+            background: $key-orange;
+          }
+          &[data-theme="3"] button {
+            background: $key-toggle-cyan;
+          }
+
+          button {
+            width: 15px;
+            height: 15px;
+            border: none;
+            border-radius: 100%;
+            background: $key-red;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+  .grid-container_mid {
+    background: $bg-screen;
+    height: 115px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &[data-theme="2"] {
+      background: $bg-screen-2;
+    }
+
+    &[data-theme="3"] {
+      background: $bg-keypad-toggle-screen3;
+    }
+
+    p {
+      font-weight: 700;
+      color: white;
+      font-size: 50px;
+      padding-right: 25px;
+
+      &[data-theme="2"] {
+        color: black;
+      }
+
+      &[data-theme="3"] {
+        color: $text-color3;
+      }
+    }
+  }
+  .grid-container_bottom {
+    background: $bg-keypad-toggle;
+    height: 434px;
+    border-radius: 10px;
+    padding: 27px;
+
+    &[data-theme="2"] {
+      background: $bg-keypad-toggle2;
+    }
+
+    &[data-theme="3"] {
+      background: $bg-keypad-toggle-screen3;
+    }
+
+    .grid-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+
+      .calc-button {
+        padding-top: 8px;
+
+        width: 92px;
+        height: 57px;
+        background: $key-background;
+        box-shadow: $key-shadow 0px 4px 1px 0px;
+        border-radius: 10px;
+        border: none;
+        font-size: 35px;
+        font-weight: 700;
+        color: $grayish-blue;
+        cursor: pointer;
+
+        &[data-theme="3"] {
+          background: $key-violet;
+          box-shadow: $key-shadow-violet 0px 4px 1px 0px;
+          color: $text-color3;
+        }
+
+        &:nth-child(4) {
+          background: $key-blue;
+          box-shadow: $key-shadow-blue 0px 4px 1px 0px;
+          color: white;
+          font-size: 25px;
+
+          &[data-theme="2"] {
+            background: $moderate-cyan;
+          }
+          &[data-theme="3"] {
+            background: $key-background3;
+            box-shadow: $key-shadow3 0px 4px 1px 0px;
+          }
+        }
+
+        &:nth-child(17) {
+          width: 100%;
+          background: $key-blue;
+          box-shadow: $key-shadow-blue 0px 4px 1px 0px;
+          grid-column: span 2;
+          color: white;
+          padding-left: 10px;
+          font-size: 25px;
+
+          &[data-theme="2"] {
+            background: $moderate-cyan;
+          }
+          &[data-theme="3"] {
+            background: $key-background3;
+            box-shadow: $key-shadow3 0px 4px 1px 0px;
+          }
+        }
+
+        &:last-child {
+          width: 100%;
+          font-size: 25px;
+          grid-column: span 2;
+          background: $key-red;
+          color: white;
+
+          box-shadow: $key-shadow-red 0px 4px 1px 0px;
+
+          &[data-theme="2"] {
+            background: $key-orange;
+            box-shadow: $key-shadow-orange 0px 4px 0px 0px;
+          }
+
+          &[data-theme="3"] {
+            background: $key-toggle-cyan;
+            box-shadow: $key-shadow-cyan 0px 4px 1px 0px;
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100px;
+  background-color: $bg-screen;
+  color: white;
+
+  a {
+    color: $key-background;
+  }
+}
