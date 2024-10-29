@@ -118,7 +118,6 @@
 
         @media screen and (max-width: 768px) {
           font-size: 20px;
-          padding-right: 9px;
         }
 
         &[data-theme="2"] {
@@ -146,6 +145,11 @@
         color: white;
 
         box-shadow: variables.$key-shadow-red 0px 4px 1px 0px;
+
+        @media screen and (max-width: 768px) {
+          font-size: 20px;
+          padding-bottom: 5px;
+        }
 
         &:hover {
           background: variables.$key-light-red;

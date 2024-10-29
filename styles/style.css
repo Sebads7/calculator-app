@@ -73,9 +73,9 @@
   margin-bottom: 5px;
   width: 71px;
   height: 26px;
-  border-radius: 10px;
+  border-radius: 20px;
   transform: translate(1px, -5px);
-  padding: 0 3px;
+  padding: 0 5px;
 }
 .grid-container_top .theme-row .theme-column .button-container[data-theme="2"] {
   justify-content: center;
@@ -254,7 +254,6 @@
 @media screen and (max-width: 768px) {
   .grid-container_bottom .grid-buttons .calc-button:nth-child(17) {
     font-size: 20px;
-    padding-right: 9px;
   }
 }
 .grid-container_bottom .grid-buttons .calc-button:nth-child(17)[data-theme="2"] {
@@ -277,6 +276,12 @@
   background: hsl(6, 63%, 50%);
   color: white;
   box-shadow: hsl(6, 70%, 34%) 0px 4px 1px 0px;
+}
+@media screen and (max-width: 768px) {
+  .grid-container_bottom .grid-buttons .calc-button:last-child {
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
 }
 .grid-container_bottom .grid-buttons .calc-button:last-child:hover {
   background: hsl(6, 63%, 55%);
@@ -306,7 +311,7 @@
 
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   background: hsl(222, 26%, 31%);
 }
 .container[data-theme="2"] {
@@ -347,6 +352,12 @@
   height: 100px;
   background-color: hsl(224, 36%, 15%);
   color: white;
+}
+@media screen and (max-width: 768px) {
+  .attribution {
+    flex-direction: column;
+    height: 150px;
+  }
 }
 .attribution a {
   color: hsl(30, 25%, 89%);
